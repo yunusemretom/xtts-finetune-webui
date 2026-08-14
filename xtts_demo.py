@@ -486,7 +486,7 @@ if __name__ == "__main__":
                     return "Unoptimized model not found in ready folder", ""
             
                 # Load the checkpoint and remove unnecessary parts.
-                checkpoint = torch.load(model_path, map_location=torch.device("cpu"))
+                checkpoint = torch.load(model_path, map_location=torch.device("cpu"), weights_only=False)
                 del checkpoint["optimizer"]
 
                 for key in list(checkpoint["model"].keys()):

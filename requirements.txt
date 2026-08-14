@@ -1,15 +1,15 @@
-faster_whisper==1.0.3
-gradio==4.44.1
-spacy==3.7.5
-coqui-tts[languages] == 0.24.2
-cutlet==0.5.0
-fugashi[unidic-lite]==1.4.0
-fastapi==0.103.1
-pydantic==2.3.0
-torch==2.1.2
-torchvision==0.16.2
-torchaudio==2.1.2
+faster_whisper>=1.1.0
+gradio>=5.0.0,<6.0.0
+spacy>=3.8.0
+coqui-tts[languages]>=0.27.0
+cutlet>=0.5.0
+fugashi[unidic-lite]>=1.4.0
 
+# torch/torchaudio bilerek pinlenmedi.
+# coqui-tts>=0.27 torch>=2.2 istiyor; CUDA'nıza uygun build'i kullanın.
+# Colab'da hazır gelen torch zaten uygun -> yeniden kurmayın.
+torch>=2.2
+torchaudio>=2.2
 
-
-
+# NOT: fastapi/pydantic pinleri kaldirildi. Eski fastapi==0.103.1 /
+# pydantic==2.3.0 pinleri gradio 4.x icin gecici cozumdu, artik cakisiyor.

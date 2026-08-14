@@ -447,7 +447,7 @@ def optimize_model_headless(output_path_base):
     try:
         print(f"Loading unoptimized model from {unoptimized_model_path}...")
         # Load to CPU first to avoid potential GPU memory issues if model is large
-        checkpoint = torch.load(unoptimized_model_path, map_location=torch.device("cpu"))
+        checkpoint = torch.load(unoptimized_model_path, map_location=torch.device("cpu"), weights_only=False)
 
         print("Removing optimizer state...")
         if "optimizer" in checkpoint:
